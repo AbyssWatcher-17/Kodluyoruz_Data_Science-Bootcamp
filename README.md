@@ -1,4 +1,4 @@
-# KODLUYORUZ PROJECT 1
+# This was our First project more details will be added
 
 ## XGB Model & Streamlit App
 

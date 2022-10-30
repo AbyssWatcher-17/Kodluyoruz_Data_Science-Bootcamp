@@ -1,20 +1,19 @@
 import pandas as pd
 import numpy as np
-from PIL import Image,ImageDraw,ImageFont
 from pandas.core.frame import DataFrame
-import time
+#import time
 from requests.api import options
 import streamlit as st
-import requests
-import base64
+#import requests
+#import base64
 import xgboost as xgb
 from sklearn.base import TransformerMixin
 from scipy.sparse import csr_matrix
 from scipy.sparse import hstack
 import joblib
 from sklearn.pipeline import Pipeline
-from streamlit import caching
-from streamlit.scriptrunner import RerunException
+#from streamlit import caching
+#from streamlit.scriptrunner import RerunException
 from PIL import Image,ImageDraw,ImageFont
 
 st.set_page_config(page_title='House Price Project', page_icon=':house_with_garden')
@@ -66,7 +65,7 @@ data_pipeline = Pipeline([('sparse', SparseMatrix())])
 
 bst = xgb.Booster()
 
-bst.load_model('housepricexgb.model')
+bst.load_model('housepricexgb_final.model')
 
 single_row = pd.read_csv('single_row.csv',index_col =0)
 
@@ -552,7 +551,7 @@ if detail:
         im1 = Image.open('MSE-İterations.png').resize((500,300))    
         
     
-        im2 = Image.open('resim.png').resize((450,305))
+        im2 = Image.open('original_predicted.png').resize((450,305))
         
         
         im3 = Image.open('Boston.png')
